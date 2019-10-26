@@ -7,6 +7,18 @@
   <title>ชิบช้อปใช้</title>
 </head>
 <body>
-  
+  <div class="description">hello</div>
+  <script>
+    (function () {
+      fetch('https://panjs.com/ywc.json')
+      .then(response => response.json() )
+      .then(result => { 
+        console.log(result);
+        const descriptionDOM = document.querySelector('.description')
+        descriptionDOM.innerHTML = result.detail
+       })
+      .catch(err => console.error(err) )
+    })()
+  </script>
 </body>
 </html>
