@@ -7,15 +7,28 @@
   <title>ชิบช้อปใช้</title>
 </head>
 <body>
+  <div class="nav-bar"></div>
   <div class="description">hello</div>
   <script>
     (function () {
       fetch('https://panjs.com/ywc.json')
       .then(response => response.json() )
       .then(result => { 
-        console.log(result);
+        const { condition, detail, duration, navbarItems } = result
+        console.log(navbarItems);
         const descriptionDOM = document.querySelector('.description')
         descriptionDOM.innerHTML = result.detail
+
+        // Add nav item into navbar
+        const navBarElement = document.querySelector('.nav-bar')
+        navbarItems.forEach(item => {
+          const { label, href } = item
+          const newElement = document.createElement('a')
+          newElement.innerHTML = label
+          newElement.setAttribute('href', href)
+          navBarElement.appendChild(newElement)
+        })
+
        })
       .catch(err => console.error(err) )
     })()
