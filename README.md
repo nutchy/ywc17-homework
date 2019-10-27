@@ -7,6 +7,7 @@
 ## Optimization
 - [ ] ปรับขนาดรูปตามขนาด Device
 - [ ] Image format file webp, png
+- [ ] load images by intersection observer 
 - [ ] og, meta tag
 - [ ] Vanilla JS + No CSS Framework
 - [ ] Minify CSS for Final(?)
