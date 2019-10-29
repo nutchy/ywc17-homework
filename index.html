@@ -4,76 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link href="https://fonts.googleapis.com/css?family=Kanit:400,500&display=swap&subset=thai" rel="stylesheet" defer>
+  <link href="https://fonts.googleapis.com/css?family=Kanit:400,500&display=swap&subset=thai" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
   <title>ชิบช้อปใช้</title>
-  <style>
-    body {
-      font-family: 'Kanit', sans-serif;
-      margin: 0;
-    }
-    section {
-      width: 100vw;
-    }
-    section .container {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    #navbar {
-      height: 58px;
-      width: 100%;
-    }
-    #navbar a {
-      text-decoration: none;
-      padding: 1em;
-    }
-    #navbar a:visited {
-      color: black;
-    }
-    .logo {
-      width: auto;
-      height: 50px;
-    }
-    .container { width: 100%; }
-    @media screen and (min-width: 576px) {
-      .container {
-        max-width: 576px;
-      }
-    }
-    @media screen and  (min-width: 768px) {
-      .container {
-        max-width: 768px;
-      }
-      .hamburger-menu {
-        width: 100%;
-        background: red;
-        width: 20px;
-      }
-      .logo {
-        display: none;
-      }
-    }
-    @media screen and (min-width: 992px) {
-      .container {
-        max-width: 992px;
-      }
-    }
-    @media screen and (min-width: 1200px) {
-      .container {
-        max-width: 1200px;
-      }
-    }
-    @media screen and (min-width: 1440px) {
-      .container {
-        max-width: 1440px;
-      }
-    }
-  </style>
 </head>
 <body>
   <section id="navbar">
     <div class="container">
       <img src="images/logo.png" alt="" class="logo">
+      <ul></ul>
       <div class="hamburger-menu">
         <span></span>
         <span></span>
@@ -81,32 +20,89 @@
       </div>
     </div>
   </section>
+  <section id="main-logo">
 
-  <div class="description">hello</div>
+  </section>
+  <section id="campagne-duration">
+    <div class="description"></div>
+  </section>
+  <section id="campagne-detail"></section>
+  <section id="tutorial"></section>
+  <section id="callcenter"></section>
+  <section id="providers"></section>
+  <section id="contact-information">
+    <div class="container">
+      <ul>
+        <li>
+          <img src="images/logo.png" alt="">
+        </li>
+        <li>
+          <p class="header">ข้อมูลลงทะเบียนประชาชน</p>
+          <p>การรับสิทธิ การใช้งานแอปพลิเคชั่น
+            <span class="nowrap">“เป๋าตัง”</span> และ <span class="nowrap">“ถุงเงิน”</span></p>
+          <p>ติดต่อ ชิมช้อปใช้ Call Center by Krungthai โทร.0 2111 1144</p>
+        </li>
+        <li>
+          <p class="header">ข้อมูลลงทะเบียนผู้ประกอบการ</p>
+          <p>เงื่อนไขและวิธีการเข้าร่วมมาตรการฯ ติดต่อ โทร.0 2270 6400 กด 7</p>
+        </li>
+        <li>
+          <p class="header">ข้อมูลเที่ยวชิมช้อปใช้</p>
+          <p>ติดต่อ ททท.</p>
+          <p>โทร1672</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+  <section id="footer-menu">
+    <div class="container">
+      <ul>
+        <li>
+          <span>Copyright © 2003-2019</span>
+        </li>
+      </ul>
+    </div>
+  </section>
   <script>
     (function () {
+      const contentString = window.localStorage.getItem('data')
+      if (!contentString) {
+        fetchContent()
+      } else {
+        renderContent(JSON.parse(contentString))
+      }
+      // navbar
+       document.querySelector('.hamburger-menu').addEventListener('click', () => {
+         console.log('clicked');
+       })
+    })()
+
+    function fetchContent() {
       fetch('https://panjs.com/ywc.json')
       .then(response => response.json() )
       .then(result => { 
-        const { condition, detail, duration, navbarItems } = result
-        const descriptionElement = document.querySelector('.description')
-        descriptionElement.innerHTML = detail
-
-        // Add nav item into navbar
-        const navBarElement = document.querySelector('#navbar .container')
-        navbarItems.forEach(item => {
-          const { label, href } = item
-          const newElement = document.createElement('a')
-          newElement.innerHTML = label
-          newElement.setAttribute('href', href)
-          navBarElement.appendChild(newElement)
-        })
+        renderContent(result)
+        window.localStorage.setItem('data', JSON.stringify(result))
        })
       .catch(err => console.error(err) )
-    })()
+    }
 
-    function greeting() {
-      console.log("HELLO");
+    function renderContent(contentJson) {
+      const { condition, detail, duration, navbarItems } = contentJson
+      const descriptionElement = document.querySelector('.description')
+      descriptionElement.innerHTML = detail
+
+      // Add nav item into navbar
+      const navBarElement = document.querySelector('#navbar ul')
+      navbarItems.forEach(item => {
+        const { label, href } = item
+        const liElement = document.createElement('li')
+        const navTextElement = document.createElement('a')
+        navTextElement.innerHTML = label
+        navTextElement.setAttribute('href', href)
+        liElement.appendChild(navTextElement)
+        navBarElement.appendChild(liElement)
+      })
     }
   </script>
 </body>

@@ -1,0 +1,161 @@
+@font-face {
+  font-family: "TATSanaChon";
+  src: url('fonts/TATSanaChon-Regular.woff2') format('woff2');
+}
+@font-face {
+  font-family: "TATSanaSuksa";
+  src: url('fonts/TATSanaSuksa-Regular.woff2') format('woff2');
+}
+@font-face {
+  font-family: "TATSanaSuksaBold";
+  src: url('fonts/TATSanaChon-Bold.woff2') format('woff2');
+}
+
+body {
+  font-family: "TATSanaSuksa";
+  margin: 0;
+}
+section {
+  width: 100%;
+}
+section .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#navbar {
+  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.1);
+}
+a {
+  font-family: "TATSanaChon";
+  font-size: 14px;
+  text-decoration: none;
+  cursor: pointer;
+  position: relative;
+}
+a:visited {
+  color: black;
+}
+a::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 6px;
+  bottom: -14px;
+  left: 0;
+  background-color: #213A8F;
+  visibility: hidden;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+}
+a:hover {
+  color: #213A8F;
+}
+a:hover:after {
+  visibility: visible;
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+}
+ul {
+  margin: 0;
+  padding: 4px 0;
+  text-align: center;
+  list-style: none;
+}
+ul > li {
+  padding: 14px;
+  display: inline-block;
+}
+.logo {
+  width: auto;
+  height: 50px;
+}
+.hamburger-menu {
+  background: red;
+  width: 20px;
+  height: 20px;
+}
+.container { width: 100%; margin: auto; }
+
+/* Mobile */
+@media screen and (max-width: 575.99px) {
+  .hamburger-menu {
+    display: block;
+  }
+}
+@media screen and (min-width: 576px) {
+  .container {
+    max-width: 576px;
+  }
+  .hamburger-menu, .logo  {
+    display: none;
+  }
+}
+@media screen and  (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+}
+@media screen and (min-width: 992px) {
+  .container {
+    max-width: 992px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .container {
+    max-width: 1200px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .container {
+    max-width: 1440px;
+  }
+}
+.d-flex {
+  display: flex;
+}
+.flex-row {
+  flex-direction: row;
+}
+.flex-column {
+  flex-direction: column;
+}
+.no-margin { margin: 0; }
+.no-padding { padding: 0; }
+.text-black { color: #333333; }
+.nowrap { white-space: nowrap; }
+#contact-information {
+  font-family: "TATSanaSuksa";
+  font-size: 14px;
+  background-color: #FAFAFA;
+  padding: 30px;
+}
+#contact-information li {
+  padding: 0 15px;
+  width: 25%;
+}
+#contact-information ul {
+  display: flex;
+  align-items: flex-start;
+}
+#contact-information p {
+  margin: 0;
+  text-align: left;
+}
+#contact-information p.header {
+  font-size: 16px;
+  color: #E6332A;
+  margin-top: 24px;
+  font-weight: bold;
+}
+#contact-information img {
+  width: 108px;
+}
+#footer-menu {
+  font-family: "TATSanaSuksaBold";
+  background-color: #213A8F;
+  color: #fff;
+  text-align: left;
+}
