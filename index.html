@@ -4,10 +4,84 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Kanit:400,500&display=swap&subset=thai" rel="stylesheet" defer>
   <title>ชิบช้อปใช้</title>
+  <style>
+    body {
+      font-family: 'Kanit', sans-serif;
+      margin: 0;
+    }
+    section {
+      width: 100vw;
+    }
+    section .container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    #navbar {
+      height: 58px;
+      width: 100%;
+    }
+    #navbar a {
+      text-decoration: none;
+      padding: 1em;
+    }
+    #navbar a:visited {
+      color: black;
+    }
+    .logo {
+      width: auto;
+      height: 50px;
+    }
+    .container { width: 100%; }
+    @media screen and (min-width: 576px) {
+      .container {
+        max-width: 576px;
+      }
+    }
+    @media screen and  (min-width: 768px) {
+      .container {
+        max-width: 768px;
+      }
+      .hamburger-menu {
+        width: 100%;
+        background: red;
+        width: 20px;
+      }
+      .logo {
+        display: none;
+      }
+    }
+    @media screen and (min-width: 992px) {
+      .container {
+        max-width: 992px;
+      }
+    }
+    @media screen and (min-width: 1200px) {
+      .container {
+        max-width: 1200px;
+      }
+    }
+    @media screen and (min-width: 1440px) {
+      .container {
+        max-width: 1440px;
+      }
+    }
+  </style>
 </head>
 <body>
-  <div class="nav-bar"></div>
+  <section id="navbar">
+    <div class="container">
+      <img src="images/logo.png" alt="" class="logo">
+      <div class="hamburger-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </section>
+
   <div class="description">hello</div>
   <script>
     (function () {
@@ -15,12 +89,11 @@
       .then(response => response.json() )
       .then(result => { 
         const { condition, detail, duration, navbarItems } = result
-        console.log(navbarItems);
-        const descriptionDOM = document.querySelector('.description')
-        descriptionDOM.innerHTML = result.detail
+        const descriptionElement = document.querySelector('.description')
+        descriptionElement.innerHTML = detail
 
         // Add nav item into navbar
-        const navBarElement = document.querySelector('.nav-bar')
+        const navBarElement = document.querySelector('#navbar .container')
         navbarItems.forEach(item => {
           const { label, href } = item
           const newElement = document.createElement('a')
@@ -28,10 +101,13 @@
           newElement.setAttribute('href', href)
           navBarElement.appendChild(newElement)
         })
-
        })
       .catch(err => console.error(err) )
     })()
+
+    function greeting() {
+      console.log("HELLO");
+    }
   </script>
 </body>
 </html>
