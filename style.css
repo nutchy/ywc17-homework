@@ -125,7 +125,18 @@ ul > li {
 .no-margin { margin: 0; }
 .no-padding { padding: 0; }
 .text-black { color: #333333; }
+.text-red { color: #E6332A; }
 .nowrap { white-space: nowrap; }
+
+h1 {
+  font-size: 48px;
+}
+
+#campagne-duration > .container{
+  flex-direction: column;
+  text-align: center;
+}
+
 #contact-information {
   font-family: "TATSanaSuksa";
   font-size: 14px;
