@@ -47,11 +47,41 @@
   </section>
   <section id="campagne-detail">
     <div class="container">
-      <h1 class="text-red">มาตรการส่งเสริมการบริโภค <br> ในประเทศ “ชิมช้อปใช้”</h1>
+      <h1 class="header-text">มาตรการส่งเสริมการบริโภค <br> ในประเทศ “ชิมช้อปใช้”</h1>
       <div class="description"></div>
+      <h2>เงื่อนไขการเข้าร่วมมาตรการ</h2>
+      <ul>
+        <li>เป็นบุคคลสัญชาติไทย มีบัตรประจำตัวประชาชน</li>
+        <li>มีอายุตั้งแต่ 18 ปีบริบูรณ์ขึ้นไป ณ วันที่ลงทะเบียน</li>
+        <li>มีโทรศัพท์มือถือสมาร์ทโฟนที่สามารถเชื่อมต่อสัญญาณอินเทอร์เน็ตและมีอีเมล</li>
+      </ul>
     </div>
   </section>
-  <section id="tutorial"></section>
+  <section id="tutorials">
+    <div class="container">
+      <div class="tutorial">
+        <div>
+          <h1 class="header-text">ค้นหารายชื่อร้านค้า</h1>
+          <a href="">รายชื่อร้านค้าที่เข้าร่วมโครงการ</a>
+        </div>
+        <img src="images/tutorials/banner_store.png" alt="">
+      </div>
+      <div class="tutorial">
+        <div>
+          <h1 class="header-text">ขั้นตอนการเข้าใช้งานผ่านแอปฯ “เป๋าตัง”</h1>
+          <a href="">รายชื่อร้านค้าที่เข้าร่วมโครงการ</a>
+        </div>
+        <iframe width="665" height="356" src="https://www.youtube.com/embed/ZkniwQLv_Xk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div class="tutorial">
+        <div>
+          <h1 class="header-text">ขั้นตอนการเข้าใช้งานผ่านแอปฯ “เป๋าตัง”</h1>
+          <a href="">รายชื่อร้านค้าที่เข้าร่วมโครงการ</a>
+        </div>
+        <img src="images/tutorials/banner_g-wallet.png" alt="">
+      </div>
+    </div>
+  </section>
   <section id="callcenter"></section>
   <section id="providers"></section>
   <section id="contact-information">
@@ -88,27 +118,22 @@
     </div>
   </section>
   <script>
-    (function () {
-      const contentString = window.localStorage.getItem('data')
-      if (!contentString) {
-        fetchContent()
-      } else {
-        renderContent(JSON.parse(contentString))
-      }
+    document.addEventListener('DOMContentLoaded', onContentLoaded)
+    async function onContentLoaded() {
+      let contentJSON = JSON.parse(window.localStorage.getItem('data'))
+      if (!contentJSON) {
+        contentJSON = await fetchContent()
+        window.localStorage.setItem('data', JSON.stringify(contentJSON))
+      } 
+      renderContent(contentJSON)
       // navbar
        document.querySelector('.hamburger-menu').addEventListener('click', () => {
          console.log('clicked');
        })
-    })()
+    }
 
     function fetchContent() {
-      fetch('https://panjs.com/ywc.json')
-      .then(response => response.json() )
-      .then(result => { 
-        renderContent(result)
-        window.localStorage.setItem('data', JSON.stringify(result))
-       })
-      .catch(err => console.error(err) )
+      return fetch('https://panjs.com/ywc.json').then(response => response.json())
     }
 
     function renderContent(contentJson) {
