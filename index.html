@@ -17,7 +17,7 @@
 <body>
   <section id="navbar">
     <div class="container">
-      <img src="images/logo.png" alt="" class="logo">
+      <img data-src="images/logo.png" alt="" class="logo">
       <ul></ul>
       <div class="hamburger-menu">
         <span></span>
@@ -29,7 +29,7 @@
   <section id="hero-banner">
     <div class="banner banner-left"></div>
     <div class="banner banner-center">
-        <img src="images/logo.png" alt="">
+        <img data-src="images/logo.png" alt="">
     </div>
     <div class="banner banner-right"></div>
   </section>
@@ -57,39 +57,46 @@
       </ul>
     </div>
   </section>
-  <section id="tutorials">
+  <section id="callcenter">
     <div class="container">
-      <div class="tutorial">
-        <div>
-          <h1 class="header-text">ค้นหารายชื่อร้านค้า</h1>
-          <a href="">รายชื่อร้านค้าที่เข้าร่วมโครงการ</a>
-        </div>
-        <!-- <img src="images/tutorials/banner_store.png" alt=""> -->
-      </div>
-      <div class="tutorial">
-        <div>
-          <h1 class="header-text">ขั้นตอนการเข้าใช้งานผ่านแอปฯ “เป๋าตัง”</h1>
-          <a href="">รายชื่อร้านค้าที่เข้าร่วมโครงการ</a>
-        </div>
-        <!-- <iframe width="665" height="auto" src="https://www.youtube.com/embed/ZkniwQLv_Xk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
-        <iframe width="665" height="auto" src="" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      </div>
-      <div class="tutorial">
-        <div>
-          <h1 class="header-text">ขั้นตอนการเข้าใช้งานผ่านแอปฯ “เป๋าตัง”</h1>
-          <a href="">รายชื่อร้านค้าที่เข้าร่วมโครงการ</a>
-        </div>
-        <!-- <img src="images/tutorials/banner_g-wallet.png" alt=""> -->
-      </div>
+      <a href="">
+        <img data-src="images/callcenter/Banner_KTB_SQ.png" alt="" class="callcenter-logo">
+      </a>
+      <a href="">
+        <img data-src="images/callcenter/Banner_CGD_Sq.png" alt="" class="callcenter-logo">
+      </a>
+      <a href="">
+        <img data-src="images/callcenter/Banner_TAT_Hotline_Sq.png" alt="" class="callcenter-logo">
+      </a>
     </div>
   </section>
-  <section id="callcenter"></section>
-  <section id="providers"></section>
+  <section id="providers">
+    <div class="container">
+      <a href="">
+        <img data-src="images/logos/MOF.png" alt="" class="provider-logo center">
+      </a>
+      <a href="">
+        <img data-src="images/logos/FPO.png" alt="" class="provider-logo center">
+      </a>
+      <a href="">
+        <img data-src="images/logos/CGD.png" alt="" class="provider-logo center">
+      </a>
+      <a href="">
+        <img data-src="images/logos/Krungthai.png" alt="" class="provider-logo center">
+      </a>
+      <a href="">
+        <img data-src="images/logos/MOTS.png" alt="" class="provider-logo center">
+      </a>
+      <a href="">
+        <img data-src="images/logos/TAT.png" alt="" class="provider-logo center">
+      </a>
+    </div>
+  </section>
   <section id="contact-information">
     <div class="container">
       <ul>
         <li>
-          <img src="images/logo.png" alt="">
+          <img data-src="images/logo.png" alt="">
         </li>
         <li>
           <p class="header">ข้อมูลลงทะเบียนประชาชน</p>
@@ -131,6 +138,9 @@
        document.querySelector('.hamburger-menu').addEventListener('click', () => {
          console.log('clicked');
        })
+      
+      // Observe Images
+      observeImages()
     }
 
     function fetchContent() {
@@ -153,6 +163,20 @@
         liElement.appendChild(navTextElement)
         navBarElement.appendChild(liElement)
       })
+    }
+
+    function observeImages() {
+      const images = document.querySelectorAll('img')
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            let image = entry.target
+            image.setAttribute('src', image.getAttribute('data-src'))
+            observer.unobserve(entry.target)
+          }
+        })
+      }, {})
+      images.forEach(img => observer.observe(img))
     }
   </script>
 </body>

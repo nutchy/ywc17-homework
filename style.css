@@ -169,7 +169,7 @@ h1 {
   font-size: 36px;
   color: #E6332A;
 }
-#campagne-detail ul {
+#campagne-detail ul, .tutorial ul {
   list-style-type: decimal;
   margin: 0;
   padding: 0 1em;
@@ -190,17 +190,37 @@ h1 {
   width: 800px;
   padding: 10px;
 }
+.provider-logo {
+  padding: 10px;
+  width: 100px;
+}
 
-.tutorial {
-  display: flex;
-  justify-content: space-between;
-  padding: 35px 0;
+.center {
+  display: block;
+  margin: auto;
 }
-.tutorial:nth-child(even) {
-  flex-direction: row-reverse;
+
+#callcenter  > .container, #providers  > .container {
+  display: grid;
 }
-.tutorial div {
-  padding: 30px;
+
+#callcenter > .container {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+#providers > .container {
+  grid-template-columns: repeat(6, 1fr);
+}
+
+/* Mobile */
+@media screen and (max-width: 575.99px) {
+  #callcenter > .container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  
+  #providers > .container {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 #contact-information {
