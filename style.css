@@ -25,6 +25,11 @@ section .container {
 }
 #navbar {
   box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.1);
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: white;
 }
 a {
   font-family: "TATSanaChon";
@@ -132,6 +137,34 @@ h1 {
   font-size: 48px;
 }
 
+#hero-banner {
+  margin-top: 66px;
+  height: 350px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.banner {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.banner-left {
+  background-image: url('images/hero_banner/banner-left.png');
+}
+.banner-right {
+  background-image: url('images/hero_banner/banner-right.png');
+}
+.banner-center {
+  background-image: url('images/hero_banner/banner-center.png');
+}
+.banner-center > img {
+  display: block;
+  margin: auto;
+  background-color: white;
+  padding: 2em;
+}
 #campagne-duration > .container{
   flex-direction: column;
   text-align: center;
