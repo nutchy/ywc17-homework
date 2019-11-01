@@ -428,7 +428,8 @@ h1 {
   margin: 100px 0;
 }
 
-#footer-menu {
+#footer-menu, #footer-menu a, #footer-menu a:visited  {
+  text-decoration: none;
   font-family: "TATSanaSuksaBold";
   background-color: #213a8f;
   color: #fff;
