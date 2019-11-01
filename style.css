@@ -278,10 +278,10 @@ h1 {
 .banner-center {
   background-image: url("images/hero_banner/banner-center.jpg");
 }
-.banner-center > img {
+.banner-center img {
   display: block;
   margin: auto;
-  background-color: white;
+  background: #fff;
   padding: 2em;
 }
 
