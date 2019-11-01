@@ -244,13 +244,13 @@
         updateNavBarContent(navbarItems);
 
         // Duration content
-        updateContent(".duration", duration);
+        updateContent("duration", duration);
 
         // Description content
-        updateContent(".description", detail);
+        updateContent("description", detail);
 
         // Condition content
-        updateContent(".condition", condition);
+        updateContent("condition", condition);
       }
 
       /**
@@ -271,7 +271,7 @@
       }
 
       function updateContent(className, content) {
-        const element = document.querySelector(className);
+        const element = document.querySelector(`.${className}`);
         element.innerHTML = content;
       }
 
