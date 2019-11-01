@@ -345,7 +345,7 @@ h1 {
   width: 100px;
   display: block;
   margin: auto;
-  transition: all 0.55s ease-in-out;
+  transition: all 0.2s ease-out;
 }
 .provider-logo:hover {
   cursor: pointer;
