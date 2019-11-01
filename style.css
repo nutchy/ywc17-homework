@@ -345,6 +345,11 @@ h1 {
   width: 100px;
   display: block;
   margin: auto;
+  transition: all 0.55s ease-in-out;
+}
+.provider-logo:hover {
+  cursor: pointer;
+  transform: scale(1.2);
 }
 
 .center {
