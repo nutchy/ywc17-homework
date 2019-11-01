@@ -1,14 +1,14 @@
 @font-face {
   font-family: "TATSanaChon";
-  src: url('fonts/TATSanaChon-Regular.woff2') format('woff2');
+  src: url("fonts/TATSanaChon-Regular.woff2") format("woff2");
 }
 @font-face {
   font-family: "TATSanaSuksa";
-  src: url('fonts/TATSanaSuksa-Regular.woff2') format('woff2');
+  src: url("fonts/TATSanaSuksa-Regular.woff2") format("woff2");
 }
 @font-face {
   font-family: "TATSanaSuksaBold";
-  src: url('fonts/TATSanaChon-Bold.woff2') format('woff2');
+  src: url("fonts/TATSanaChon-Bold.woff2") format("woff2");
 }
 * {
   box-sizing: border-box;
@@ -47,7 +47,7 @@ section {
   height: 6px;
   bottom: -14px;
   left: 0;
-  background-color: #213A8F;
+  background-color: #213a8f;
   visibility: hidden;
   -webkit-transform: scaleX(0);
   transform: scaleX(0);
@@ -55,7 +55,7 @@ section {
   transition: all 0.3s ease-in-out 0s;
 }
 #navbar a:hover {
-  color: #213A8F;
+  color: #213a8f;
 }
 #navbar a:hover:after {
   visibility: visible;
@@ -76,7 +76,9 @@ section {
   align-items: center;
   box-sizing: border-box;
 }
-ul { list-style: none; }
+ul {
+  list-style: none;
+}
 .logo {
   width: auto;
   height: 50px;
@@ -87,7 +89,7 @@ ul { list-style: none; }
   position: relative;
   margin: 0px;
   transform: rotate(0deg);
-  transition: .5s ease-in-out;
+  transition: 0.5s ease-in-out;
   cursor: pointer;
   font-size: 1.25rem;
   line-height: 1;
@@ -102,12 +104,18 @@ ul { list-style: none; }
   border-radius: 9px;
   opacity: 1;
   left: 0;
-  transition: .25s ease-in-out;
+  transition: 0.25s ease-in-out;
   transform: rotate(0deg);
 }
-.hamburger-menu span:nth-child(1) { top: 0; }
-.hamburger-menu span:nth-child(2) { top: 10px; }
-.hamburger-menu span:nth-child(3) { top: 20px; }
+.hamburger-menu span:nth-child(1) {
+  top: 0;
+}
+.hamburger-menu span:nth-child(2) {
+  top: 10px;
+}
+.hamburger-menu span:nth-child(3) {
+  top: 20px;
+}
 .hamburger-menu.open span:nth-child(1) {
   top: 11px;
   transform: rotate(135deg);
@@ -122,7 +130,10 @@ ul { list-style: none; }
   transform: rotate(-135deg);
   -webkit-transform: rotate(-135deg);
 }
-.container { width: 100%; margin: auto;}
+.container {
+  width: 100%;
+  margin: auto;
+}
 
 /* Mobile */
 @media screen and (max-width: 575.99px) {
@@ -151,13 +162,13 @@ ul { list-style: none; }
   .nav-items a {
     font-family: TATSanaSuksa !important;
     font-size: 16px !important;
-    color: rgba(0,0,0,.5) !important;
+    color: rgba(0, 0, 0, 0.5) !important;
   }
   .nav-items a::after {
     content: none !important;
   }
   .nav-items a:hover {
-    color: rgba(0,0,0,.7) !important;
+    color: rgba(0, 0, 0, 0.7) !important;
   }
   .nav-items ul.open {
     width: 100%;
@@ -174,7 +185,8 @@ ul { list-style: none; }
   .register-btn {
     font-size: 18px !important;
   }
-  .description, .condition {
+  .description,
+  .condition {
     font-size: 16px !important;
   }
   .callcenter-logo {
@@ -184,7 +196,8 @@ ul { list-style: none; }
     width: 56px !important;
     padding: 0 !important;
   }
-  #providers, #callcenter {
+  #providers,
+  #callcenter {
     margin: 50px 0 !important;
   }
 }
@@ -192,11 +205,12 @@ ul { list-style: none; }
   .container {
     max-width: 576px;
   }
-  .hamburger-menu, .logo  {
+  .hamburger-menu,
+  .logo {
     display: none;
   }
 }
-@media screen and  (min-width: 768px) {
+@media screen and (min-width: 768px) {
   .container {
     max-width: 768px;
   }
@@ -220,11 +234,21 @@ ul { list-style: none; }
 .flex-column {
   flex-direction: column;
 }
-.no-margin { margin: 0; }
-.no-padding { padding: 0; }
-.text-black { color: #333333; }
-.text-red { color: #E6332A; }
-.nowrap { white-space: nowrap; }
+.no-margin {
+  margin: 0;
+}
+.no-padding {
+  padding: 0;
+}
+.text-black {
+  color: #333333;
+}
+.text-red {
+  color: #e6332a;
+}
+.nowrap {
+  white-space: nowrap;
+}
 
 h1 {
   font-size: 48px;
@@ -244,13 +268,13 @@ h1 {
   background-size: cover;
 }
 .banner-left {
-  background-image: url('images/hero_banner/banner-left.jpg');
+  background-image: url("images/hero_banner/banner-left.jpg");
 }
 .banner-right {
-  background-image: url('images/hero_banner/banner-right.jpg');
+  background-image: url("images/hero_banner/banner-right.jpg");
 }
 .banner-center {
-  background-image: url('images/hero_banner/banner-center.jpg');
+  background-image: url("images/hero_banner/banner-center.jpg");
 }
 .banner-center > img {
   display: block;
@@ -269,7 +293,8 @@ h1 {
   font-size: 18px;
   margin: 1.5rem 0 0 0;
 }
-.description, .condition {
+.description,
+.condition {
   font-family: TATSanaSuksa;
   font-size: 18px;
   max-width: 950px;
@@ -277,9 +302,10 @@ h1 {
 .header-text {
   font-family: TATSanaSuksaBold;
   font-size: 36px;
-  color: #E6332A;
+  color: #e6332a;
 }
-#campagne-detail ul, .tutorial ul {
+#campagne-detail ul,
+.tutorial ul {
   list-style-type: decimal;
   margin: 0;
   padding: 0 1em;
@@ -293,7 +319,7 @@ h1 {
   text-align: center;
 }
 .register-btn {
-  background-color: #213A8F;
+  background-color: #213a8f;
   border-radius: 5px;
   box-shadow: 0 15px 30px 0 rgba(28, 78, 132, 0.4);
   color: #fff !important;
@@ -308,7 +334,7 @@ h1 {
   transition: background-color 0.3s;
 }
 .register-btn:hover {
-  background-color: #FBBC33;
+  background-color: #fbbc33;
   box-shadow: none;
 }
 .provider-logo {
@@ -323,7 +349,8 @@ h1 {
   margin: auto;
 }
 
-#callcenter  > .container, #providers  > .container {
+#callcenter > .container,
+#providers > .container {
   display: grid;
 }
 
@@ -340,7 +367,7 @@ h1 {
   #callcenter > .container {
     grid-template-columns: repeat(1, 1fr);
   }
-  
+
   #providers > .container {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -349,7 +376,7 @@ h1 {
 #contact-information {
   font-family: "TATSanaSuksa";
   font-size: 14px;
-  background-color: #FAFAFA;
+  background-color: #fafafa;
   box-sizing: border-box;
 }
 #contact-information li {
@@ -368,7 +395,7 @@ h1 {
 }
 #contact-information p.header {
   font-size: 16px;
-  color: #E6332A;
+  color: #e6332a;
   margin-top: 24px;
   font-weight: bold;
 }
@@ -382,13 +409,14 @@ h1 {
   max-width: 100%;
 }
 
-#providers, #callcenter {
+#providers,
+#callcenter {
   margin: 100px 0;
 }
 
 #footer-menu {
   font-family: "TATSanaSuksaBold";
-  background-color: #213A8F;
+  background-color: #213a8f;
   color: #fff;
   text-align: left;
 }
@@ -400,13 +428,14 @@ h1 {
 }
 
 @media screen and (max-width: 575.99px) {
-  #footer-menu ul, #contact-information ul {
+  #footer-menu ul,
+  #contact-information ul {
     flex-direction: column;
   }
 }
 
 #footer-menu li {
   display: block;
-  padding: .5rem 1rem;
+  padding: 0.5rem 1rem;
   font-size: 14px;
 }
