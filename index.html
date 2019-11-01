@@ -37,7 +37,7 @@
   <section id="campagne-duration">
     <div class="container">
       <p>ตั้งแต่วันที่</p>
-      <h1 class="text-red no-margin">27 ก.ย. - 31 ธ.ค. 62</h1>
+      <h1 class="text-red no-margin duration"></h1>
       <a href="https://regist.ชิมช้อปใช้.com/Register/" class="register-btn">
         คงเหลือสิทธิลงทะเบียน เฟส 2 <br>
         สำหรับวันที่ 30 ตุลาคม 2562 <br>
@@ -51,11 +51,7 @@
       <h1 class="header-text">มาตรการส่งเสริมการบริโภค <br> ในประเทศ “ชิมช้อปใช้”</h1>
       <div class="description"></div>
       <h2>เงื่อนไขการเข้าร่วมมาตรการ</h2>
-      <ul>
-        <li>เป็นบุคคลสัญชาติไทย มีบัตรประจำตัวประชาชน</li>
-        <li>มีอายุตั้งแต่ 18 ปีบริบูรณ์ขึ้นไป ณ วันที่ลงทะเบียน</li>
-        <li>มีโทรศัพท์มือถือสมาร์ทโฟนที่สามารถเชื่อมต่อสัญญาณอินเทอร์เน็ตและมีอีเมล</li>
-      </ul>
+      <div class="condition"></div>
     </div>
   </section>
   <section id="callcenter">
@@ -123,6 +119,15 @@
         <li>
           <span>Copyright © 2003-2019</span>
         </li>
+        <li>
+          <a>ลงทะเบียนเข้าร่วมมาตรการ</a>
+        </li>
+        <li>
+          <a>ขั้นตอนการเข้าร่วมทั้งหมด</a>
+        </li>
+        <li>
+          <a>รายชื่อร้านค้าที่เข้าร่วมรายการ</a>
+        </li>
       </ul>
     </div>
   </section>
@@ -150,9 +155,6 @@
 
     function renderContent(contentJson) {
       const { condition, detail, duration, navbarItems } = contentJson
-      const descriptionElement = document.querySelector('.description')
-      descriptionElement.innerHTML = detail
-
       // Add nav item into navbar
       const navBarElement = document.querySelector('#navbar ul')
       navbarItems.forEach(item => {
@@ -164,6 +166,18 @@
         liElement.appendChild(navTextElement)
         navBarElement.appendChild(liElement)
       })
+
+      // Duration content
+      const durationEl = document.querySelector('.duration')
+      durationEl.innerHTML = duration
+
+      // Description content
+      const descriptionEl = document.querySelector('.description')
+      descriptionEl.innerHTML = detail
+
+      // Condition content
+      const conditionEl = document.querySelector('.condition')
+      conditionEl.innerHTML = condition
     }
 
     function observeImages() {
