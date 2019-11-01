@@ -232,26 +232,8 @@ ul {
     max-width: 1140px;
   }
 }
-.d-flex {
-  display: flex;
-}
-.flex-row {
-  flex-direction: row;
-}
-.flex-column {
-  flex-direction: column;
-}
 .no-margin {
   margin: 0;
-}
-.no-padding {
-  padding: 0;
-}
-.text-black {
-  color: #333333;
-}
-.text-red {
-  color: #e6332a;
 }
 .nowrap {
   white-space: nowrap;
@@ -311,14 +293,12 @@ h1 {
   font-size: 36px;
   color: #e6332a;
 }
-#campagne-detail ul,
-.tutorial ul {
-  list-style-type: decimal;
-  margin: 0;
-  padding: 0 1em;
-}
 #campagne-duration {
   margin: 2rem 0;
+}
+#campagne-duration h1 {
+  color: #e6332a;
+  margin: 0;
 }
 #campagne-duration > .container {
   font-family: TATSanaSuksaBold;
@@ -361,12 +341,6 @@ h1 {
   cursor: pointer;
   transform: scale(1.2);
 }
-
-.center {
-  display: block;
-  margin: auto;
-}
-
 #callcenter > .container,
 #providers > .container {
   display: grid;
