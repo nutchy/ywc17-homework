@@ -33,14 +33,12 @@ section {
   background: white;
   box-sizing: border-box;
 }
-#navbar a {
+#navbar a, #navbar a:visited {
   font-family: "TATSanaChon";
   font-size: 14px;
   text-decoration: none;
   cursor: pointer;
   position: relative;
-}
-#navbar a:visited {
   color: black;
 }
 #navbar a::after {
