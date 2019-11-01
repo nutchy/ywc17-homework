@@ -231,8 +231,25 @@
       function renderContent(contentJson) {
         const { condition, detail, duration, navbarItems } = contentJson;
         // Add nav item into navbar
+        updateNavBarContent(navbarItems)
+
+        // Duration content
+        updateContent(".duration", duration)
+
+        // Description content
+        updateContent(".description", detail)
+
+        // Condition content
+        updateContent(".condition", condition)
+      }
+
+      /**
+      * @params {Array} - navItems is array of menu object
+      *  e.g. [ { href: "https://regist.ชิมช้อปใช้.com/Register/", label: "ลงทะเบียนเข้าร่วมมาตรการ"} ]
+      **/
+      function updateNavBarContent(navItems) {
         const navBarElement = document.querySelector("#navbar ul");
-        navbarItems.forEach(item => {
+        navItems.forEach(item => {
           const { label, href } = item;
           const liElement = document.createElement("li");
           const navTextElement = document.createElement("a");
@@ -241,18 +258,11 @@
           liElement.appendChild(navTextElement);
           navBarElement.appendChild(liElement);
         });
+      }
 
-        // Duration content
-        const durationEl = document.querySelector(".duration");
-        durationEl.innerHTML = duration;
-
-        // Description content
-        const descriptionEl = document.querySelector(".description");
-        descriptionEl.innerHTML = detail;
-
-        // Condition content
-        const conditionEl = document.querySelector(".condition");
-        conditionEl.innerHTML = condition;
+      function updateContent(className, content) {
+        const element = document.querySelector(className);
+        element.innerHTML = content;
       }
 
       // Prevent load image on off-screen
