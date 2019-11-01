@@ -10,5 +10,4 @@
 - [x] load images using intersection observer 
 - [x] og, meta tag
 - [ ] Polyfill Fetch API
-- [ ] Vanilla JS + No CSS Framework
 - [ ] Minify CSS for Final(?)
