@@ -143,13 +143,13 @@ h1 {
   background-size: cover;
 }
 .banner-left {
-  background-image: url('images/hero_banner/banner-left.png');
+  background-image: url('images/hero_banner/banner-left.jpg');
 }
 .banner-right {
-  background-image: url('images/hero_banner/banner-right.png');
+  background-image: url('images/hero_banner/banner-right.jpg');
 }
 .banner-center {
-  background-image: url('images/hero_banner/banner-center.png');
+  background-image: url('images/hero_banner/banner-center.jpg');
 }
 .banner-center > img {
   display: block;
