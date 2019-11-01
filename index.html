@@ -17,7 +17,7 @@
 </head>
 <body>
   <section id="navbar">
-    <div class="container">
+    <div class="container nav-items">
       <img data-src="images/logo.png" alt="" class="logo">
       <ul></ul>
       <div class="hamburger-menu">
@@ -39,10 +39,9 @@
       <p>ตั้งแต่วันที่</p>
       <h1 class="text-red no-margin duration"></h1>
       <a href="https://regist.ชิมช้อปใช้.com/Register/" class="register-btn">
-        คงเหลือสิทธิลงทะเบียน เฟส 2 <br>
-        สำหรับวันที่ 30 ตุลาคม 2562 <br>
-        รอบเวลา 6.00 น. จำนวน 14,025 คน <br>
-        รอบเวลา 18.00 น. จำนวน 14,024 คน <br>
+        ลงทะเบียน เฟส 2 <br>
+        ตั้งแต่วันที่ 24 ต.ค.62 วันละ 2 รอบ รอบเวลา 6.00 และ 18.00 น.<br>
+        จำกัดจำนวนผู้ลงทะเบียนรอบละ 5 แสนคน รวม 1 ล้านคนต่อวัน
       </a>
     </div>
   </section>
@@ -140,10 +139,6 @@
         window.localStorage.setItem('data', JSON.stringify(contentJSON))
       } 
       renderContent(contentJSON)
-      // navbar
-       document.querySelector('.hamburger-menu').addEventListener('click', () => {
-         console.log('clicked');
-       })
       
       // Observe Images (Lazy Load)
       observeImages()
@@ -193,6 +188,14 @@
       }, {})
       images.forEach(img => observer.observe(img))
     }
+
+    // toggle button
+    const hamburgerBtn = document.querySelector('.hamburger-menu')
+    const navBarElement = document.querySelector('#navbar ul')
+    hamburgerBtn.addEventListener('click', () => {
+      hamburgerBtn.classList.toggle('open')
+      navBarElement.classList.toggle('open')
+    })
   </script>
 </body>
 </html>
