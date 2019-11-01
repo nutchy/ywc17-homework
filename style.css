@@ -14,6 +14,7 @@
 body {
   font-family: "TATSanaSuksa";
   margin: 0;
+  color: #333333;
 }
 section {
   width: 100%;
@@ -238,6 +239,15 @@ h1 {
   flex-direction: column;
   align-items: flex-start;
 }
+#campagne-detail h2 {
+  font-size: 18px;
+  margin: 1.5rem 0 0 0;
+}
+.description, .condition {
+  font-family: TATSanaSuksa;
+  font-size: 18px;
+  max-width: 950px;
+}
 .header-text {
   font-family: TATSanaSuksaBold;
   font-size: 36px;
@@ -247,6 +257,9 @@ h1 {
   list-style-type: decimal;
   margin: 0;
   padding: 0 1em;
+}
+#campagne-duration {
+  margin: 2rem 0;
 }
 #campagne-duration > .container {
   font-family: TATSanaSuksaBold;
@@ -261,7 +274,7 @@ h1 {
   display: block;
   font-family: TATSanaSuksaBold;
   font-size: 24px;
-  margin: auto;
+  margin: 10px auto;
   max-width: 100%;
   padding: 10px;
   text-decoration: none;
@@ -318,6 +331,8 @@ h1 {
 #contact-information ul {
   display: flex;
   align-items: flex-start;
+  margin: 0;
+  padding: 2rem 0;
 }
 #contact-information p {
   margin: 0;
@@ -332,6 +347,14 @@ h1 {
 #contact-information img {
   width: 108px;
 }
+#callcenter img {
+  width: 350px;
+}
+
+#providers, #callcenter {
+  margin: 100px 0;
+}
+
 #footer-menu {
   font-family: "TATSanaSuksaBold";
   background-color: #213A8F;
