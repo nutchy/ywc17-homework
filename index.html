@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
     <meta property="og:url" content="https://www.ชิมช้อปใช้.com/" />
     <meta property="og:type" content="website" />
     <meta
@@ -16,7 +16,10 @@
       property="og:description"
       content="ผู้สนใจเข้าร่วมมาตรการฯ สามารถลงทะเบียน ตั้งแต่ วันที่ 23 ก.ย. - 15 พ.ย. 62"
     />
-    <meta property="og:image" content="https://nutchy.github.io/ywc17-homework/images/logo.png" />
+    <meta
+      property="og:image"
+      content="https://nutchy.github.io/ywc17-homework/images/logo.png"
+    />
     <meta
       property="title"
       content="มาตรการส่งเสริมการท่องเที่ยวในประเทศ “ชิมช้อปใช้”"
@@ -231,22 +234,22 @@
       function renderContent(contentJson) {
         const { condition, detail, duration, navbarItems } = contentJson;
         // Add nav item into navbar
-        updateNavBarContent(navbarItems)
+        updateNavBarContent(navbarItems);
 
         // Duration content
-        updateContent(".duration", duration)
+        updateContent(".duration", duration);
 
         // Description content
-        updateContent(".description", detail)
+        updateContent(".description", detail);
 
         // Condition content
-        updateContent(".condition", condition)
+        updateContent(".condition", condition);
       }
 
       /**
-      * @params {Array} - navItems is array of menu object
-      *  e.g. [ { href: "https://regist.ชิมช้อปใช้.com/Register/", label: "ลงทะเบียนเข้าร่วมมาตรการ"} ]
-      **/
+       * @params {Array} - navItems is array of menu object
+       *  e.g. [ { href: "https://regist.ชิมช้อปใช้.com/Register/", label: "ลงทะเบียนเข้าร่วมมาตรการ"} ]
+       **/
       function updateNavBarContent(navItems) {
         const navBarElement = document.querySelector("#navbar ul");
         navItems.forEach(item => {
