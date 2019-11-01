@@ -1,13 +1,16 @@
 @font-face {
   font-family: "TATSanaChon";
+  font-display: swap;
   src: url("fonts/TATSanaChon-Regular.woff2") format("woff2");
 }
 @font-face {
   font-family: "TATSanaSuksa";
+  font-display: swap;
   src: url("fonts/TATSanaSuksa-Regular.woff2") format("woff2");
 }
 @font-face {
   font-family: "TATSanaSuksaBold";
+  font-display: swap;
   src: url("fonts/TATSanaChon-Bold.woff2") format("woff2");
 }
 * {
