@@ -66,6 +66,7 @@ section {
 #navbar ul {
   margin: 0;
   text-align: center;
+  padding: 0;
 }
 #navbar ul > li {
   padding: 14px;
